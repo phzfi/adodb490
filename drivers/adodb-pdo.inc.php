@@ -114,12 +114,15 @@ class ADODB_pdo extends ADOConnection {
 	
 	var $_errormsg = false;
 	var $_errorno = false;
+	var $_driver;
 	
 	var $dsnType = '';
 	var $stmt = false;
 	
 	function ADODB_pdo()
 	{
+	    $this->_driver = new stdClass();
+	    $this->_driver->debug = false;;
 	}
 	
 	function _UpdatePDO()
